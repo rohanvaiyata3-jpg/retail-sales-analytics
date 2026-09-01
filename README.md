@@ -1,24 +1,35 @@
 # E-Commerce Sales & Customer Analytics
 
-## 📌 Project Overview
+A Python-based business analytics project analyzing e-commerce sales, customers, products, categories, geography, sales channels, discounts, and payment methods.
 
-This project analyzes e-commerce sales data to identify key business trends across revenue, customers, products, categories, geography, sales channels, discounts, and payment methods.
+The objective is to convert transaction-level data into actionable business insights using exploratory data analysis and data visualization.
 
-The project uses Python-based exploratory data analysis to convert raw transaction data into actionable business insights.
+---
+
+## 📊 Key Metrics
+
+| Metric | Value |
+|---|---:|
+| Net Sales | ₹3.51 Cr |
+| Total Orders | 8,000 |
+| Unique Customers | 1,490 |
+| Average Order Value | ₹4,388.72 |
+| Repeat Customers | 1,459 |
+| Repeat Customer Rate | 97.92% |
 
 ---
 
 ## 🎯 Business Questions
 
-The analysis focuses on the following questions:
+This project answers key business questions such as:
 
 - What is the overall sales and order performance?
-- Which product categories generate the most revenue?
+- Which categories generate the most revenue?
 - Which products are the top revenue contributors?
 - Which states contribute the most sales?
 - How do Online and Offline channels compare?
-- How has business performance changed between 2024 and 2025?
-- What is the relationship between discounts and Average Order Value?
+- How did business performance change between 2024 and 2025?
+- How are discounts associated with Average Order Value?
 - Which payment methods are most commonly used?
 - What customer purchasing patterns can be identified?
 
@@ -34,44 +45,44 @@ The analysis focuses on the following questions:
 
 ---
 
-## 📊 Dataset
+## 📂 Dataset
 
-The dataset contains e-commerce transaction-level information including:
+The dataset contains transaction-level e-commerce information covering:
 
 - Order details
 - Customer information
 - Product information
 - Category
-- Geographic information
+- City and State
 - Quantity
-- Unit price
-- Discount percentage
-- Payment method
-- Sales channel
-- Customer rating
-- Gross sales
-- Net sales
+- Unit Price
+- Discount Percentage
+- Payment Method
+- Sales Channel
+- Customer Rating
+- Gross Sales
+- Net Sales
 
 ### Dataset Size
 
-- **Original Records:** 8,020
-- **Records after cleaning:** 8,000
-- **Columns:** 18
-- **Unique Orders:** 8,000
-- **Unique Customers:** 1,490
+- Original Records: **8,020**
+- Records after cleaning: **8,000**
+- Columns: **18**
+- Unique Orders: **8,000**
+- Unique Customers: **1,490**
 
 ---
 
 ## 🧹 Data Cleaning
 
-The following cleaning steps were performed:
+The following data preparation steps were performed:
 
 1. Identified and removed 20 duplicate records.
 2. Identified 20 missing Payment Method values.
 3. Replaced missing Payment Method values with `Unknown`.
-4. Retained 20 missing Customer Rating values because no reliable replacement value was available.
-5. Converted `Order_Date` from string format to datetime format.
-6. Performed final validation to confirm data quality.
+4. Retained missing Customer Rating values where no reliable replacement was available.
+5. Converted `Order_Date` to datetime format.
+6. Performed final validation after cleaning.
 
 ---
 
@@ -81,7 +92,7 @@ The following cleaning steps were performed:
 
 - Total Net Sales
 - Total Orders
-- Total Customers
+- Unique Customers
 - Average Order Value
 
 ### Category Analysis
@@ -108,7 +119,6 @@ The following cleaning steps were performed:
 - Orders by channel
 - Revenue by channel
 - Average Order Value by channel
-- Revenue share by channel
 
 ### Time-Based Analysis
 
@@ -140,45 +150,18 @@ The following cleaning steps were performed:
 - Revenue by payment method
 
 ---
-## 📊 Visualizations
-
-### Revenue by Category
-
-![Revenue by Category](visualizations/revenue_by_category.png)
-
-### Revenue by State
-
-![Revenue by State](visualizations/revenue_by_state.png)
-
-### Monthly Revenue Trend
-
-![Monthly Revenue Trend](visualizations/monthly_revenue_trend.png)
-
-### Revenue by Sales Channel
-
-![Revenue by Sales Channel](visualizations/revenue_by_channel.png)
-
-### Top 10 Products by Revenue
-
-![Top 10 Products by Revenue](visualizations/top_10_products_by_revenue.png)
-
-### Discount vs Average Order Value
-
-![Discount vs Average Order Value](visualizations/discount_vs_aov.png)
-
----
 
 # 🔑 Key Business Insights
 
-### 1. Strong Overall Sales Performance
+### 1. Strong Overall Sales
 
 The business generated approximately **₹3.51 crore in net sales** across **8,000 orders**, with an Average Order Value of approximately **₹4,388.72**.
 
-### 2. Strong Customer Retention
+### 2. High Repeat Customer Rate
 
 The analysis identified **1,459 repeat customers out of 1,490 customers**, resulting in a repeat customer rate of approximately **97.92%**.
 
-### 3. Electronics is the Leading Category
+### 3. Electronics Leads Revenue
 
 Electronics generated approximately **₹1.16 crore** in net sales, making it the highest-revenue category.
 
@@ -186,7 +169,7 @@ Electronics generated approximately **₹1.16 crore** in net sales, making it th
 
 Maharashtra generated approximately **₹89.85 lakh**, contributing approximately **25.59% of total net sales**.
 
-### 5. Online is the Dominant Sales Channel
+### 5. Online is the Dominant Channel
 
 Online generated **5,415 orders**, compared with **2,585 offline orders**, indicating significantly higher transaction volume through the online channel.
 
@@ -198,9 +181,9 @@ Smart Watch generated approximately **₹42.77 lakh** in net sales, making it th
 
 Average Order Value decreased from approximately **₹4,821 at 0% discount** to **₹3,516.90 at 25% discount**.
 
-This represents an observed association rather than proof of causation.
+This represents an observed association and does not establish causation.
 
-### 8. 2025 Performance Remained Broadly Stable
+### 8. 2025 Performance Remained Stable
 
 Compared with 2024:
 
@@ -208,7 +191,7 @@ Compared with 2024:
 - Orders declined by **0.40%**
 - AOV declined by **0.24%**
 
-The business therefore remained broadly stable year-over-year.
+Overall business performance remained broadly stable year-over-year.
 
 ---
 
@@ -220,27 +203,57 @@ Continue investing in Electronics and Home & Kitchen while identifying opportuni
 
 ### 2. Optimize the Online Channel
 
-Given the significantly higher online order volume, the business should continue improving online conversion, customer experience, and retention.
+Given the higher online order volume, focus on improving online conversion, customer experience, and retention.
 
 ### 3. Expand Geographic Reach
 
-Maharashtra is a major contributor to revenue. The business should explore opportunities to increase penetration in lower-performing states while maintaining its position in established markets.
+Maharashtra is a major revenue contributor. Opportunities should be explored to increase penetration in lower-performing states while maintaining established markets.
 
 ### 4. Optimize Discounting
 
-Discounts should be targeted toward specific customer segments and products rather than applied broadly. Promotional campaigns should be evaluated based on incremental revenue and profitability.
+Discounts should be targeted toward specific products and customer segments rather than applied broadly.
+
+Promotional campaigns should be evaluated based on incremental revenue and profitability.
 
 ### 5. Leverage High-Performing Products
 
-Products such as Smart Watches, Air Fryers, and Bluetooth Speakers could be prioritized for cross-selling, bundling, and inventory planning.
+Products such as Smart Watches, Air Fryers, and Bluetooth Speakers can be prioritized for cross-selling, bundling, and inventory planning.
 
 ### 6. Protect Customer Retention
 
-The high repeat-customer rate indicates strong customer engagement. Loyalty programs and personalized offers could help maintain this customer base.
+The high repeat-customer rate provides an opportunity to strengthen loyalty programs and personalized offers.
 
 ### 7. Monitor Growth
 
-Although 2025 performance was broadly stable, management should monitor category, product, channel, and geographic trends to identify opportunities for renewed growth.
+Although 2025 performance was broadly stable, category, product, channel, and geographic trends should be monitored to identify opportunities for renewed growth.
+
+---
+
+# 📊 Visualizations
+
+### Revenue by Category
+
+![Revenue by Category](visualizations/revenue_by_category.png)
+
+### Revenue by State
+
+![Revenue by State](visualizations/revenue_by_state.png)
+
+### Revenue by Sales Channel
+
+![Revenue by Channel](visualizations/revenue_by_channel.png)
+
+### Monthly Sales Trend
+
+![Monthly Sales Trend](visualizations/monthly_sales_trend.png)
+
+### Top Products by Revenue
+
+![Top Products by Revenue](visualizations/top_products_by_revenue.png)
+
+### Discount vs Sales
+
+![Discount vs Sales](visualizations/discount_vs_sales.png)
 
 ---
 
@@ -256,6 +269,12 @@ retail-sales-analytics/
 │   └── ecommerce_sales_analysis_final.ipynb
 │
 ├── visualizations/
+│   ├── discount_vs_sales.png
+│   ├── monthly_sales_trend.png
+│   ├── revenue_by_category.png
+│   ├── revenue_by_channel.png
+│   ├── revenue_by_state.png
+│   └── top_products_by_revenue.png
 │
 ├── README.md
 │
