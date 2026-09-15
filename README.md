@@ -1,12 +1,12 @@
 # E-Commerce Sales & Customer Analytics
 
-A Python-based business analytics project analyzing e-commerce sales, customers, products, categories, geography, sales channels, discounts, and payment methods.
+A Python-based analysis of an e-commerce sales dataset covering customers, products, categories, locations, discounts, sales channels, and payment methods.
 
-The objective is to convert transaction-level data into actionable business insights using exploratory data analysis and data visualization.
+I used Python to clean the data, explore sales patterns, compare different parts of the business, and identify a few areas that are worth looking at from a business perspective.
 
 ---
 
-## 📊 Key Metrics
+## Key Metrics
 
 | Metric | Value |
 |---|---:|
@@ -19,23 +19,22 @@ The objective is to convert transaction-level data into actionable business insi
 
 ---
 
-## 🎯 Business Questions
+## What I Wanted to Understand
 
-This project answers key business questions such as:
+The analysis was built around a few practical questions:
 
-- What is the overall sales and order performance?
-- Which categories generate the most revenue?
-- Which products are the top revenue contributors?
-- Which states contribute the most sales?
-- How do Online and Offline channels compare?
-- How did business performance change between 2024 and 2025?
-- How are discounts associated with Average Order Value?
-- Which payment methods are most commonly used?
-- What customer purchasing patterns can be identified?
+- How is the business performing overall?
+- Which categories and products contribute the most revenue?
+- Which states are the strongest markets?
+- How different are Online and Offline sales?
+- What changed between 2024 and 2025?
+- Is there any visible relationship between discounts and order value?
+- Which payment methods are used most often?
+- What does the customer data tell us about repeat purchasing?
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools Used
 
 - Python
 - Pandas
@@ -45,17 +44,14 @@ This project answers key business questions such as:
 
 ---
 
-## 📂 Dataset
+## Dataset
 
-The dataset contains transaction-level e-commerce information covering:
+The dataset contains e-commerce transaction data across:
 
-- Order details
-- Customer information
-- Product information
-- Category
+- Order and customer details
+- Products and categories
 - City and State
-- Quantity
-- Unit Price
+- Quantity and Unit Price
 - Discount Percentage
 - Payment Method
 - Sales Channel
@@ -65,54 +61,60 @@ The dataset contains transaction-level e-commerce information covering:
 
 ### Dataset Size
 
-- Original Records: **8,020**
+- Original records: **8,020**
 - Records after cleaning: **8,000**
 - Columns: **18**
-- Unique Orders: **8,000**
+- Unique Order IDs: **8,000**
 - Unique Customers: **1,490**
 
 ---
 
-## 🧹 Data Cleaning
+## Data Cleaning
 
-The following data preparation steps were performed:
+Before starting the analysis, I performed a basic data-quality check and prepared the dataset for analysis.
 
-1. Identified and removed 20 duplicate records.
-2. Identified 20 missing Payment Method values.
-3. Replaced missing Payment Method values with `Unknown`.
-4. Retained missing Customer Rating values where no reliable replacement was available.
-5. Converted `Order_Date` to datetime format.
-6. Performed final validation after cleaning.
+The main steps were:
+
+1. Removed **20 duplicate records**.
+2. Identified **20 missing Payment Method values**.
+3. Replaced missing payment methods with `Unknown`.
+4. Kept missing Customer Rating values where there was no reliable value to replace them with.
+5. Converted `Order_Date` into datetime format.
+6. Performed a final validation of the cleaned dataset.
 
 ---
 
-## 📈 Analysis Performed
+## Analysis
 
-### Overall Sales Performance
+### Sales Performance
 
-- Total Net Sales
-- Total Orders
-- Unique Customers
+- Total net sales
+- Total orders
+- Unique customers
 - Average Order Value
-
-### Category Analysis
-
-- Revenue by category
-- Quantity sold by category
-- Average unit price by category
+- Yearly sales performance
+- Year-over-year growth
 
 ### Customer Analysis
 
 - Orders per customer
 - Repeat customers
 - Repeat customer rate
-- Order frequency
+- Customer order frequency
 
-### Geographical Analysis
+### Product & Category Analysis
+
+- Revenue by category
+- Quantity sold by category
+- Average unit price by category
+- Top 10 products by revenue
+- Top 10 products by quantity
+
+### Geographic Analysis
 
 - Revenue by state
-- Revenue contribution by state
-- Top-performing state
+- State contribution to total sales
+- Top-performing states
 
 ### Sales Channel Analysis
 
@@ -120,19 +122,14 @@ The following data preparation steps were performed:
 - Revenue by channel
 - Average Order Value by channel
 
-### Time-Based Analysis
+### Time Analysis
 
 - Monthly revenue
 - Monthly order volume
 - Yearly revenue
 - Yearly orders
 - Yearly AOV
-- Year-over-year growth
-
-### Product Analysis
-
-- Top 10 products by revenue
-- Top 10 products by quantity
+- Year-over-year revenue growth
 
 ### Discount Analysis
 
@@ -140,50 +137,56 @@ The following data preparation steps were performed:
 - Orders by discount level
 - Average Order Value by discount level
 
-### Customer Rating Analysis
+### Customer Ratings
 
 - Average customer rating by category
 
-### Payment Analysis
+### Payment Methods
 
 - Orders by payment method
 - Revenue by payment method
 
 ---
 
-# 🔑 Key Business Insights
+# Key Findings
 
-### 1. Strong Overall Sales
+A few findings stood out during the analysis.
 
-The business generated approximately **₹3.51 crore in net sales** across **8,000 orders**, with an Average Order Value of approximately **₹4,388.72**.
+### 1. The business generated ₹3.51 crore in net sales
 
-### 2. High Repeat Customer Rate
+The dataset contains **8,000 orders** from **1,490 customers**, with an average order value of **₹4,388.72**.
 
-The analysis identified **1,459 repeat customers out of 1,490 customers**, resulting in a repeat customer rate of approximately **97.92%**.
+### 2. Most customers placed repeat orders
 
-### 3. Electronics Leads Revenue
+There were **1,459 repeat customers**, giving a repeat customer rate of **97.92%**.
 
-Electronics generated approximately **₹1.16 crore** in net sales, making it the highest-revenue category.
+This is unusually high, so it is something I would want to investigate further rather than automatically treating it as a sign of strong customer loyalty.
 
-### 4. Maharashtra is the Largest Market
+### 3. Electronics was the largest revenue category
 
-Maharashtra generated approximately **₹89.85 lakh**, contributing approximately **25.59% of total net sales**.
+Electronics generated approximately **₹1.16 crore** in net sales and was the highest-revenue category in the dataset.
 
-### 5. Online is the Dominant Channel
+### 4. Maharashtra was the largest state market
 
-Online generated **5,415 orders**, compared with **2,585 offline orders**, indicating significantly higher transaction volume through the online channel.
+Maharashtra contributed approximately **₹89.85 lakh**, or around **25.59% of total net sales**.
 
-### 6. Smart Watch is the Top Revenue Product
+### 5. Online sales accounted for most orders
+
+The Online channel recorded **5,415 orders**, compared with **2,585 Offline orders**.
+
+This makes Online the dominant channel by transaction volume.
+
+### 6. Smart Watch was the top revenue-generating product
 
 Smart Watch generated approximately **₹42.77 lakh** in net sales, making it the highest-revenue product in the dataset.
 
-### 7. Higher Discounts are Associated with Lower AOV
+### 7. Higher discount levels showed lower AOV
 
-Average Order Value decreased from approximately **₹4,821 at 0% discount** to **₹3,516.90 at 25% discount**.
+Average Order Value fell from approximately **₹4,821 at 0% discount** to **₹3,516.90 at 25% discount**.
 
-This represents an observed association and does not establish causation.
+This is an observed relationship in the dataset and should not be interpreted as proof that discounts directly caused the lower AOV.
 
-### 8. 2025 Performance Remained Stable
+### 8. 2025 was broadly flat compared with 2024
 
 Compared with 2024:
 
@@ -191,45 +194,24 @@ Compared with 2024:
 - Orders declined by **0.40%**
 - AOV declined by **0.24%**
 
-Overall business performance remained broadly stable year-over-year.
+So overall sales performance remained relatively stable rather than showing significant growth or decline.
 
 ---
 
-# 💡 Business Recommendations
+# What These Findings Suggest
 
-### 1. Strengthen High-Performing Categories
+Based on the analysis, a few areas stood out for further investigation:
 
-Continue investing in Electronics and Home & Kitchen while identifying opportunities to improve lower-performing categories.
-
-### 2. Optimize the Online Channel
-
-Given the higher online order volume, focus on improving online conversion, customer experience, and retention.
-
-### 3. Expand Geographic Reach
-
-Maharashtra is a major revenue contributor. Opportunities should be explored to increase penetration in lower-performing states while maintaining established markets.
-
-### 4. Optimize Discounting
-
-Discounts should be targeted toward specific products and customer segments rather than applied broadly.
-
-Promotional campaigns should be evaluated based on incremental revenue and profitability.
-
-### 5. Leverage High-Performing Products
-
-Products such as Smart Watches, Air Fryers, and Bluetooth Speakers can be prioritized for cross-selling, bundling, and inventory planning.
-
-### 6. Protect Customer Retention
-
-The high repeat-customer rate provides an opportunity to strengthen loyalty programs and personalized offers.
-
-### 7. Monitor Growth
-
-Although 2025 performance was broadly stable, category, product, channel, and geographic trends should be monitored to identify opportunities for renewed growth.
+- **Electronics and other high-revenue categories** could be studied further for product-level opportunities.
+- The large contribution from **Maharashtra** suggests there may be scope to understand what is driving performance there and whether similar patterns exist in other states.
+- The strong Online channel could be examined for differences in customer behaviour and basket size.
+- The relationship between **discounting and AOV** suggests that blanket discounting may not always produce larger baskets.
+- The very high repeat-customer rate should be validated against the underlying order structure before being used as a strong retention claim.
+- Since 2025 revenue was almost flat, category, product, and channel-level changes may provide more useful signals than looking only at total yearly revenue.
 
 ---
 
-# 📊 Visualizations
+# Visualizations
 
 ### Revenue by Category
 
@@ -257,7 +239,7 @@ Although 2025 performance was broadly stable, category, product, channel, and ge
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```text
 retail-sales-analytics/
