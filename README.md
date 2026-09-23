@@ -241,23 +241,4 @@ Based on the analysis, a few areas stood out for further investigation:
 
 # Project Structure
 
-```text
-retail-sales-analytics/
-│
-├── data/
-│   └── ecommerce_sales.csv
-│
-├── notebooks/
-│   └── ecommerce_sales_analysis_final.ipynb
-│
-├── visualizations/
-│   ├── discount_vs_sales.png
-│   ├── monthly_sales_trend.png
-│   ├── revenue_by_category.png
-│   ├── revenue_by_channel.png
-│   ├── revenue_by_state.png
-│   └── top_products_by_revenue.png
-│
-├── README.md
-│
-└── requirements.txt
+<img width="655" height="447" alt="image" src="https://github.com/user-attachments/assets/3d9983a9-9d98-4a35-bbf5-ae8f0fd995b9" />
